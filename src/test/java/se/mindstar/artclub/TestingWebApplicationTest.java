@@ -20,7 +20,7 @@ import se.mindstar.artclub.model.User;
 import java.util.ArrayList;
 import java.util.List;
 
-@SpringBootTest
+@SpringBootTest(classes = TestRedisConfiguration.class)
 @AutoConfigureMockMvc
 public class TestingWebApplicationTest {
 
