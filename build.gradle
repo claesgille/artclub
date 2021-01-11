@@ -49,3 +49,10 @@ asciidoctor {
 	inputs.dir snippetsDir
 	dependsOn test
 }
+
+docker {
+	name "${project.name}:${project.version}"
+	files bootJar.outputs
+	buildArgs(['JAR_FILE': bootJar.archiveFileName.get()])
+	tag 'Dockerhub', "mindstar1/artclub-service:${project.version}"
+}
